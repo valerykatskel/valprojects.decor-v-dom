@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<!--[if lte IE 8]><script src="http://phpbbex.com/oldies/oldies.js" charset="utf-8"></script><![endif]-->
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<title>Предметы интерьерного декора. Обои. Ковры. Линкруста. Фрески. Карнизы. Светильники. Художественная роспись</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">	
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />	
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
+  <script src="http://malsup.github.com/jquery.form.js"></script> 
+  <script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>
+  <script type="text/javascript" src="js/jcarousel.simple.js"></script>
+  <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+  <script type="text/javascript" src="js/jquery.bpopup.min.js"></script>
+
+  <script> 
+    $(document).ready(function() { 
+      // форма online заявки
+      var options = {
+        target: ".form-content"
+      };
+
+      $(".online-order-form").validate({
+        submitHandler: function(form) {
+          $(form).ajaxSubmit(options);
+        },
+        focusInvalid: false,
+        focusCleanup: true,
+        rules: {
+          name: {
+            required: true,
+            minlength: 2,
+            maxlength: 12
+          },
+          phone: {
+            required: true,
+          },
+          email: {
+            required: true,
+            email: true
+          }
+        },
+        messages: {
+          name: {
+            required: "Укажите свое имя!",
+            minlength: "Не менее 2 символов",
+            maxlength: "Не более 12 символов"
+          },
+          phone: {
+            required: "Укажите свой номер телефона!"
+          },
+          email: {
+            required: "Укажите свой email адрес",
+            email: "Укажите корректный email адрес!"
+          }
+        },
+        errorPlacement: function(error, element) {
+          element.attr("title", error[0].textContent);
+        }
+      });
+      
+      // форма заказа звонка
+      var options_call = {
+        target: ".popup-form-content"
+      };
+      
+      $(".order-call-form").validate({
+        submitHandler: function(form) {
+          $(form).ajaxSubmit(options_call);
+        },
+        focusInvalid: false,
+        focusCleanup: true,
+        rules: {
+          name: {
+            required: true,
+            minlength: 2,
+            maxlength: 12
+          },
+          phone: {
+            required: true,
+          },
+          time: {
+            required: true
+          }
+        },
+        messages: {
+          name: {
+            required: "Укажите свое имя!",
+            minlength: "Не менее 2 символов",
+            maxlength: "Не более 12 символов"
+          },
+          phone: {
+            required: "Укажите свой номер телефона!"
+          },
+          time: {
+            required: "Укажите желаемое время звонка!"
+          }
+        },
+        errorPlacement: function(error, element) {
+          element.attr("title", error[0].textContent);
+        }
+      });
+
+      $('.order-call').on('click', function(e) {
+        e.preventDefault();
+        $('.popup-order-call').bPopup({
+          closeClass: 'close-popup'
+        });
+      });      
+      
+    }); 
+  </script>   
+</head>
+<body>
+  <div class="popup-order-call">
+    <a href="#" class="close-popup"></a>
+    <h3>Заказать звонок</h3>
+    <div class="popup-form-content">
+      <p>Оставьте свой телефон и мы Вам презвоним.</p>
+      <form class="order-call-form" action="http://valprojects.net/p/decor-v-dom/send-order-call.php" method="post">
+        <input type="text" name="name" placeholder="Введите Ваше имя..." />
+        <input type="text" name="phone" placeholder="Контактный телефон..." />
+        <input type="text" name="time" placeholder="Удобное время звонка..." />
+        <input class="btn big" type="submit" name="send-online-order" value="Перезвоните мне"/>
+      </form>
+    </div>    
+  </div>
+  <div class="header-wrapper">
+    <header class="page-header">
+      <div class="logo"></div>
+      <div class="site-intro">
+        <h1>Предметы интерьерного декора.<br/>Обои. Ковры. Линкруста. Фрески.<br/>  Карнизы. Светильники. Художественная роспись</h1>
+        <p class="title">От Студии текстильного декора Виктории Куприяновой</p>
+      </div>  
+      <div class="head-contacts">
+        <p>Контактный телефон для Москвы и МО:</p>
+        <p class="phone">+ 7(985)643-8777</p>
+        <a class="order-call btn" href="#"><img src="images/call.png" alt=""/>Заказать звонок</a>
+      </div>
+    </header>
+  </div>  
+  <div class="carouserl-block-wrapper">
+    <div class="carouserl-block clear">
+      <div class="carousel-wrapper">
+          <div data-jcarousel="true" data-wrap="circular" class="carousel">
+            <ul>
+              <li>
+                <img src="assets/images/carousel/img1.jpg" width="619" height="459" alt="">
+                <div class="slide-description">
+                  <p>Привнеси в свой дом безупречность</p>
+                </div>
+              </li>
+              <li>
+                <img src="assets/images/carousel/img2.jpg" width="619" height="459" alt="">
+                <div class="slide-description">
+                  <p>Привнеси в свой дом безупречность</p>
+                </div>
+              </li>
+              <li>
+                <img src="assets/images/carousel/img3.jpg" width="619" height="459" alt="">
+                <div class="slide-description">
+                  <p>Привнеси в свой дом безупречность</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <a data-jcarousel-control="true" data-target="-=1" href="#" class="carousel-control-prev"></a>
+          <a data-jcarousel-control="true" data-target="+=1" href="#" class="carousel-control-next"></a>
+      </div>
+      <div class="right-sidebar">
+        <div class="online-block">
+          <h3>Online-заявка</h3>
+          <div class="form-content">
+            <form class="online-order-form" action="http://valprojects.net/p/decor-v-dom/send-online-order.php" method="post">
+              <input type="text" name="name" placeholder="Введите Ваше имя..."  class="required" minlength="2">
+              <input type="text" name="phone" placeholder="Контактный телефон...">
+              <input type="text" name="email" placeholder="E-mail...">
+              <input class="btn big" type="submit" name="send-online-order" value="Отправить"/>
+            </form>
+          </div>  
+        </div>
+        <div class="discount-block">
+          <p class="header">Акция</p>
+          <p class="line1">Только в апреле!</p>
+          <p class="line2">бесплатный выезд дизайнера и снятие размеров объекта</p>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="main-content-wrapper">
+    <div class="main-content">
+      <header class="block-header"><h3>Ателье</h3></header>
+      <ul class="photo-list">
+        <li><img src="assets/images/atelie/img1.jpg" alt="" /></li>
+        <li><img src="assets/images/atelie/img2.jpg" alt="" /></li>
+        <li><img src="assets/images/atelie/img3.jpg" alt="" /></li>
+        <li><img src="assets/images/atelie/img4.jpg" alt="" /></li>
+      </ul>
+      <header class="block-header made"><h3>Мы изготавливаем</h3></header>
+      <ul class="photo-list">
+        <li>
+          <h4>Обои</h4>
+          <img src="assets/images/made/img1.jpg" alt="" />
+        </li>    
+        <li>  
+          <img src="assets/images/made/img2.jpg" alt="" />
+        </li>
+        <li>
+          <h4>Линкруста</h4>
+          <img src="assets/images/made/img3.jpg" alt="" />
+        </li>
+        <li>
+          <img src="assets/images/made/img4.jpg" alt="" />
+        </li>
+        <li>
+          <h4>Ковры</h4>
+          <img src="assets/images/made/img5.jpg" alt="" />
+        </li>
+        <li> 
+          <img src="assets/images/made/img6.jpg" alt="" />
+        </li>
+        <li>
+          <h4>Витражи</h4>
+          <img src="assets/images/made/img7.jpg" alt="" />
+        </li>
+        <li>
+          <img src="assets/images/made/img8.jpg" alt="" />
+        </li>
+        <li>
+          <h4>Карнизы</h4>
+          <img src="assets/images/made/img9.jpg" alt="" />
+        </li>
+        <li> 
+          <img src="assets/images/made/img10.jpg" alt="" />
+        </li>
+        <li>
+          <h4>Светильники</h4>        
+          <img src="assets/images/made/img11.jpg" alt="" />
+        </li>
+        <li>
+          <img src="assets/images/made/img12.jpg" alt="" />
+        </li>
+        <li>
+          <h4>Художественная роспись</h4>
+          <img src="assets/images/made/img13.jpg" alt="" />
+        </li>
+        <li> 
+          <img src="assets/images/made/img14.jpg" alt="" />
+        </li>
+        <li>
+          <h4>Фрески</h4>        
+          <img src="assets/images/made/img15.jpg" alt="" />
+        </li>
+        <li>
+          <img src="assets/images/made/img16.jpg" alt="" />
+        </li>
+      </ul>
+      <hr class="header-line" />
+      <div class="text-block1"> 
+        <p>В вашем интерьере не хватает ‘изюминки’ ? Хочется привнести свежесть, добавить немного изящества? Гости перестали восхищаться обстановкой вашего дома.</p>
+        <p>Вы обратились по адресу.</p>
+        <p>Наш салон предметов декора подарит вашему дому разумную элегантность с легким налетом роскоши.</p>
+      </div>
+      <hr class="header-line" />
+      <ul class="three-blocks clear">
+        <li class="b1"><div><a href="#">Накопительная дисконтная карта</a></div></li>
+        <li class="b2"><div><a href="#">Гарантийное<br/>обслуживание</a></div></li>
+        <li class="b3"><div><a href="#">Распечатай купон <br/>и получи скидку 5%</a></div></li>
+      </ul>   
+      <hr class="header-line" />
+      <div class="text-block"> 
+        <p><span>Фрески</span> – вид декора, который прочно прижился в современных интерьерах. Они объемные, фактурные и теплые на ощупь. Это большие картины, только не на холсте … И это не текстильные ковры, которые требуют дополнительного ухода … Современные цифровые фрески позволяют переносить на стену самые замечательные шедевры – и картины да Винчи, и первый рисунок Вашего ребенка.</p>
+        
+        <p><span>Витражи</span>.  Глянцевая жесткость стекла необходима для гармоничного уравновешивания каждого интерьера. Витражи позволяют сделать это эффектно и стильно. Контурные витражи из смальты, кусочков цветного стекла – очень яркие, они акцентируют сами себя. Витражи с пескоструйным рисунком подойдут для сдержанных интерьеров. Есть много вариантов - звоните, пишите, уточняйте!</p>
+
+        <p><span>Ковры</span>. У нас в каталоге предлагаются ковры, которые не встретишь в магазинах: их привозим под заказ, или выполняем эксклюзивные заказы. Есть современные модернистские ковры, и ковры с эффектом старинного текстиля. Мастерство ткачей ковров ручной работы поражает: здесь и смелые сочетания цветов как в игрушечном калейдоскопе, и вытканные маскароны со светотенью, которая визуально «приподнимает» рисунок над плоскостью… Очень красиво.</p>
+
+        <p><span>Линкруста</span> – это объемные обои –например, с лепным декором, которые начали использовать еще в XIX веке во дворцах королевских особ и позже –в домах богатых и знаменитых. Эти обои относятся к категории элитных, так как начиная с 19 века и по сей день для их производства используются только натуральные материалы – воск, мел, канифоль, льняное масло и древесная мука. Преимущество этого состава еще в том, что со временем он не расслаивается и становится только прочнее!</p>
+
+        <p><span>Обои</span> – всем известный материал, который в рекордно короткие сроки может преобразить всю квартиру или дом. С помощью цвета обоев можно визуально уменьшить или увеличить пространство, зонировать помещение, комбинируя фактуры и оттенки, и так далее. У нас Вы найдете дизайнерские обои любых стилей; все материалы - с приятной на ощупь поверхностью и хорошими эко-характеристиками.</p>
+
+        <p><span>Художественная роспись</span>. Даже самые продвинутые технологии никогда не заменят рукотворное искусство. Художник, который при помощи своего таланта, красок и кистей создает полотна на стенах и потолке, всегда будет в цене.</p>
+
+        <p>Мы можем расписать Ваш дом с помощью разных техник создания изображений. Это могут быть фрески, нарисованные вручную, роспись алсекко «на сухую», или сграффити, или аэрография – в зависимости от стиля помещения мы предложим подходящее решение. Настоящее, живое искусство.</p>
+
+        <p><span>Карнизы</span>. Слоновая кость, натуральное дерево, металлы и сплавы, стекло, ковка, инкрустация стразами и самоцветами – вся эта красота может появиться в Вашем доме. Карнизы для штор – такой же важный предмет интерьера, как и все остальное.</p>
+
+        <p>Кроме карнизов для штор, есть потолочные - для отделки соединения стены и потолков, особенно это актуально для украшения классических интерьеров. У нас Вы можете заказать и те, и другие: мы не только подберем Вам нужные варианты, но и сами установим их в интерьере.</p>
+      </div>      
+      <header class="diploms">
+        <div>
+          <h3>Наши дипломы</h3>
+        </div>
+      </header>  
+      <ul class="diplom-list">
+        <li><img src="assets/images/diploms/d1.jpg" alt="" /></li>
+        <li><img src="assets/images/diploms/d2.jpg" alt="" /></li>
+        <li><img src="assets/images/diploms/d3.jpg" alt="" /></li>
+        <li><img src="assets/images/diploms/d4.jpg" alt="" /></li>
+        <li><img src="assets/images/diploms/d5.jpg" alt="" /></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-wrapper clear">
+    <div class="footer clear">
+      <div class="left">
+        <div class="reviews-block">
+          <p class="header">Отзывы</p>
+          <div class="review-text">
+            <p class="name">Екатерина, Москва</p>
+            <p>В советское время школьная форма была одинаковой и обязательной для всех школ страны.</p>
+          </div>  
+        </div>        
+      </div>
+      <div class="right">
+         <a class="btn order-call" href="#">Заказать<br/>выезд дизайнера<br/>сейчас</a>    
+      </div>
+      <div class="center">
+        <p>email: apprt78@gmail.com • + 7 (985) 643-8777</p>
+        <p>Copyright © 2012 Ателье Придворный портной</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
